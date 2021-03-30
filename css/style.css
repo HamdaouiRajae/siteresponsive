@@ -1,0 +1,215 @@
+/*General styles*/
+body{
+    font-family:lucida sans;/*c'est un type de font */
+    
+}
+.sections{
+    padding: 20px 0;
+}
+.overlay{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+}
+.section-header .section-header.section-title{
+    font-size: 40px;
+    
+}
+
+.section-header .line{
+    width: 150px;
+    background: #ddd;
+    height: 3px;
+    margin: auto;/*mettre cette petite ligne au centre*/
+}
+.section-header .line span{
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color:#FFBF00;
+    margin : auto;/*mettre la ligne au centre*/
+    position : relative;
+    bottom: 0.5px;
+}
+.section-header p{
+    width: 50%;
+    color: #888;
+    margin: 20px auto;/*10px de haut et en bas comme un margin*/
+    line-height: 1.5;
+}
+
+/* Header */
+
+header{
+    height : 75px;/*l'hauteur du header(la barre)*/
+    padding : 1px 0;/*1px dans toutes les directions*/
+   /* border-bottom : 1px solid #000;bordure de la barre de largeur 1px et de couleur noir*/
+    
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+header i.icon{
+    position: absolute;
+    right: 30px;
+    top: 34px;
+    z-index: 10;
+    display: none;/* ne pas afficher l'icone de menu dans tous les ecrans*/
+    
+    
+}
+
+header .logo h2{
+    font-size : 35px; /*modifier la taille du logo*/
+    color: #fff;
+}
+
+header nav .nav-list{
+    list-style : none;/* supprimer les points de la liste*/
+    display : flex;/* mettre les elements de la liste les uns après les autres*/
+    justify-content: space-around;/*mettre des espaces entre les elements de la liste*/
+    margin-bottom: 0;
+}
+/*
+pour les espaces on peur utiliser une 2ème methode:
+header nav .nav-list .list{
+    display: inline-block;//mettre les elements de la liste les uns à coté des autres
+}
+*/
+header nav .nav-list .list a{
+    display: block;/* pour pouvoir donner un margin et un padding*/
+    padding: 15px 0;/* 15 px en bas en haut à gauche et à droite*/
+    margin: 9px 0;/*9px en bas en haut 0px our la droit et la gauche*/
+    text-decoration: none;/* on va éliminer le soulignement lorsqu'on va toucher l'element*/
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+}
+header nav .nav-list .list a:hover{
+    color : #FFBF00;/*mettre un couleur lorsqu'on va toucher un element de la liste (par hover)*/
+}
+/* cette partie est consacrée pour rendre la page adaptative avec les petites ecrans */
+
+.sticky{
+    background: #000;
+    color: #fff;
+    
+}
+
+@media(max-width:575px){
+    
+    header{
+       /* j'ai remplacé le background en header nav .nav-list car ça va pas marché meme les demarches du video */ 
+    }
+    header nav .nav-list{
+        display: none;/*   block est pour l'adapter avec les petites ecrans pour les smalls devices on va annuler le display flex mais pour medium au plus ca va rester le meme */
+        /* display none est pour ne pas afficher le menu sauf dans les grands ecrans */
+        text-align: center; /* pour centrer le menu */
+        padding: 0; /* pour bien les centrer */
+        background: #000;
+    }
+        
+    header .logo{
+        text-align: center; /* pour centrer le logo */
+         
+    }
+    header i.icon{
+        display: block;/* pour apparaitre l'icone de menu seulement dans les petites ecrans */
+    }
+    .section-header p{
+        width: 85%;
+    }
+}
+/* Home section */
+.home{
+    height:650px;
+    background-image: url('../images/home/home.jpg');
+    background-size: cover;
+    background-position: center;
+    position :relative;
+}
+.home .home-content{
+    position : absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+.home .home-title{
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.home .home-desc{
+    color: #fff;
+    font-size: 18px;
+}
+.home .button{
+    background : #FFBF00;
+    color : #fff;
+    width:150px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media(max-width:575px){
+    
+    .home .home-title{
+        font-size: 22px;
+        
+    }
+    .home .button{
+        margin-bottom: 10px;
+        
+    }
+}
+
+/* About Us */
+.about .about-info h3{
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    
+}
+.about .about-info h3 span{
+    color: #FFBF00;
+}
+.about .about-info .about-info-desc{
+    line-height: 1.8;
+    color: #888;
+    margin-bottom: 20px;
+    
+}
+.about .about-info .about-info-btn{
+    background-color: #FFBF00;
+    padding: 10px 20px;
+    border: 0;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 15px;
+    
+}
+
+.about .about-img img{
+    width: 100%;
+    
+    
+}
+@media(max-width:575px){
+    .about .about-info h3{
+        font-size: 20px;
+    }
+}
+@media(min-width:576px) and (max-width:768px){
+    .section .about-info{
+        text-align: center;
+    }
+}
+
+/*Pour developpement*/
+.test{
+    margin-bottom:500px;
+}
+
